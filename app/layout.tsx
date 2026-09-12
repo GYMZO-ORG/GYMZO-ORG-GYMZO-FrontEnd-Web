@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import { SiteHeader } from "@/components/layout/site-header";
+import { AppShell } from "@/components/layout/app-shell";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ToastProvider } from "@/components/ui/toast";
 
@@ -33,8 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className={styles.body}>
         <ThemeProvider>
           <ToastProvider>
-            <SiteHeader />
-            <main className={styles.main}>{children}</main>
+            <AppShell>{children}</AppShell>
           </ToastProvider>
         </ThemeProvider>
       </body>
