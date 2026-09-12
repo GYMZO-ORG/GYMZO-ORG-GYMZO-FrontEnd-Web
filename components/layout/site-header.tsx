@@ -28,9 +28,10 @@ export function SiteHeader() {
       <PageContainer className={styles.siteHeaderInner}>
         <div className={styles.brandCluster}>
           <Link className={styles.brand} href="/" aria-label="GYMZO home">
-            GYMZO
+            <span className={styles.brandMark} aria-hidden="true" />
+            <span>GYMZO</span>
           </Link>
-          <span className={styles.environmentBadge}>Public</span>
+          <span className={styles.environmentBadge}>Guest</span>
         </div>
 
         <nav className={styles.nav} aria-label="Primary navigation">

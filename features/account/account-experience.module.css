@@ -1,15 +1,37 @@
 .authShell {
   display: grid;
-  gap: 2rem;
-  align-items: start;
+  gap: 1.25rem;
+  align-items: stretch;
 }
 
 .authPanel {
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-2xl);
   background: var(--surface);
-  padding: 1.25rem;
-  box-shadow: var(--shadow-sm);
+  padding: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.authLockup {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 1rem;
+}
+
+.authMark {
+  width: 2.125rem;
+  height: 0.625rem;
+  border-radius: 999px;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+  transform: skewX(-14deg);
+}
+
+.authBrand {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 900;
 }
 
 .authForm {
@@ -17,16 +39,45 @@
   gap: 1rem;
 }
 
+.socialRow {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.authDivider {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.authDivider::before,
+.authDivider::after {
+  height: 1px;
+  background: var(--border);
+  content: "";
+}
+
 .authAside {
   display: grid;
+  align-content: start;
   gap: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  background: linear-gradient(135deg, var(--primary-soft), transparent 62%), var(--surface);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
 }
 
 .authAsideTitle {
   margin: 0;
   color: var(--text-primary);
   font-size: 1.25rem;
-  font-weight: 720;
+  font-weight: 850;
   line-height: 1.3;
 }
 
@@ -66,9 +117,10 @@
   display: grid;
   gap: 1rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   background: var(--surface);
   padding: 1.25rem;
+  box-shadow: var(--shadow-md);
 }
 
 .summaryHeader {
@@ -82,7 +134,7 @@
   margin: 0;
   color: var(--text-primary);
   font-size: 1.5rem;
-  font-weight: 760;
+  font-weight: 850;
 }
 
 .summaryMeta {
@@ -122,9 +174,10 @@
 
 .signalCard {
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   background: var(--surface);
   padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
 }
 
 .signalIcon {
@@ -133,8 +186,8 @@
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: var(--radius-md);
-  background: color-mix(in oklab, var(--primary) 14%, var(--surface-secondary));
+  border-radius: var(--radius-lg);
+  background: var(--primary-soft);
   color: var(--text-primary);
 }
 
@@ -150,7 +203,7 @@
   margin: 0.25rem 0 0;
   color: var(--text-primary);
   font-size: 1.125rem;
-  font-weight: 720;
+  font-weight: 850;
 }
 
 .signalCopy {
@@ -170,6 +223,10 @@
 @media (min-width: 768px) {
   .authShell {
     grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 0.55fr);
+  }
+
+  .authPanel {
+    padding: 1.25rem;
   }
 
   .accountGrid {

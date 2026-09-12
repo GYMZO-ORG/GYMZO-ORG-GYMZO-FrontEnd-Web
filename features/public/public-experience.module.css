@@ -1,49 +1,49 @@
 .hero {
   position: relative;
-  min-height: min(46rem, calc(100vh - 4rem));
+  min-height: auto;
   overflow: hidden;
-  border-bottom: 1px solid var(--border);
   background: var(--background);
+  padding: 1rem 0 0.5rem;
 }
 
 .heroImage {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  right: var(--page-gutter);
+  bottom: 2rem;
+  left: auto;
+  width: min(38rem, 42vw);
+  height: min(28rem, 48vw);
+  border: 1px solid rgb(255 255 255 / 28%);
+  border-radius: var(--radius-panel);
   object-fit: cover;
+  box-shadow: var(--shadow-md);
 }
 
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgb(11 15 12 / 90%) 0%,
-      rgb(11 15 12 / 64%) 44%,
-      rgb(11 15 12 / 12%) 100%
-    ),
-    linear-gradient(0deg, var(--background) 0%, transparent 24%);
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-soft) 62%, transparent 100%);
+  border-radius: 0 0 var(--radius-panel) var(--radius-panel);
+  opacity: 0.9;
 }
 
 .heroInner {
   position: relative;
   z-index: 1;
   display: grid;
-  min-height: min(46rem, calc(100vh - 4rem));
+  min-height: 34rem;
   align-items: center;
-  padding-block: 4rem;
+  padding-block: 2.5rem;
 }
 
 .heroContent {
-  max-width: 44rem;
-  color: #f5f7f3;
+  max-width: 39rem;
+  color: var(--text-primary);
 }
 
 .eyebrow {
   margin: 0 0 1rem;
-  color: color-mix(in oklab, var(--primary) 72%, white);
+  color: color-mix(in oklab, var(--primary-hover) 76%, var(--text-primary));
   font-size: 0.8125rem;
   font-weight: 750;
   letter-spacing: 0;
@@ -52,16 +52,16 @@
 
 .heroTitle {
   margin: 0;
-  font-size: clamp(3rem, 9vw, 5.75rem);
-  font-weight: 760;
-  line-height: 0.96;
+  font-size: clamp(2.55rem, 6vw, 4.75rem);
+  font-weight: 900;
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
 .heroCopy {
   max-width: 38rem;
   margin: 1.25rem 0 0;
-  color: rgb(245 247 243 / 84%);
+  color: color-mix(in oklab, var(--text-primary) 72%, var(--text-secondary));
   font-size: 1.125rem;
   line-height: 1.8;
 }
@@ -82,16 +82,16 @@
 }
 
 .stat {
-  border: 1px solid rgb(245 247 243 / 18%);
+  border: 1px solid color-mix(in oklab, var(--primary-hover) 20%, var(--border));
   border-radius: var(--radius-lg);
-  background: rgb(20 26 21 / 68%);
+  background: color-mix(in oklab, var(--surface) 78%, transparent);
   padding: 1rem;
   backdrop-filter: blur(10px);
 }
 
 .statValue {
   display: block;
-  color: var(--primary);
+  color: var(--text-primary);
   font-size: 1.25rem;
   font-weight: 760;
 }
@@ -99,7 +99,7 @@
 .statLabel {
   display: block;
   margin-top: 0.25rem;
-  color: rgb(245 247 243 / 72%);
+  color: var(--text-secondary);
   font-size: 0.75rem;
   line-height: 1.5;
 }
@@ -119,8 +119,8 @@
 .sectionTitle {
   margin: 0;
   color: var(--text-primary);
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 720;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 850;
   line-height: 1.1;
 }
 
@@ -135,15 +135,27 @@
 .gymGrid {
   display: grid;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .gymCard {
   overflow: hidden;
+  transition:
+    border-color var(--duration-base),
+    transform var(--duration-base),
+    box-shadow var(--duration-base);
+}
+
+.gymCard:hover {
+  border-color: color-mix(in oklab, var(--primary) 48%, var(--border));
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .gymVisual {
-  min-height: 12rem;
+  min-height: 10rem;
   border-bottom: 1px solid var(--border);
+  border-radius: calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px) 0 0;
 }
 
 .visualCharcoal {
@@ -170,8 +182,8 @@
 
 .gymCardBody {
   display: grid;
-  gap: 1rem;
-  padding: 1.25rem;
+  gap: 0.875rem;
+  padding: 1rem;
 }
 
 .gymMeta {
@@ -181,7 +193,7 @@
   gap: 0.5rem;
   color: var(--text-secondary);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .gymNameRow {
@@ -194,8 +206,8 @@
 .gymName {
   margin: 0;
   color: var(--text-primary);
-  font-size: 1.35rem;
-  font-weight: 720;
+  font-size: 1.2rem;
+  font-weight: 850;
   line-height: 1.25;
 }
 
@@ -235,17 +247,17 @@
 .price {
   color: var(--text-primary);
   font-size: 0.9375rem;
-  font-weight: 720;
+  font-weight: 850;
 }
 
 .searchPanel {
   display: grid;
   gap: 1rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   background: var(--surface);
   padding: 1rem;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 .searchGrid {
@@ -266,18 +278,24 @@
   color: var(--text-secondary);
   padding: 0.5rem 0.75rem;
   font-size: 0.8125rem;
-  font-weight: 650;
+  font-weight: 800;
 }
 
 .filterPillActive {
   border-color: var(--primary);
-  background: color-mix(in oklab, var(--primary) 18%, var(--surface));
+  background: var(--primary);
   color: var(--text-primary);
 }
 
 .detailHero {
   border-bottom: 1px solid var(--border);
-  background: var(--surface);
+  background:
+    radial-gradient(
+      circle at 84% 18%,
+      color-mix(in oklab, var(--primary) 24%, transparent),
+      transparent 24rem
+    ),
+    var(--surface);
 }
 
 .detailGrid {
@@ -294,8 +312,8 @@
 .detailTitle {
   margin: 0;
   color: var(--text-primary);
-  font-size: clamp(2.5rem, 7vw, 4.5rem);
-  font-weight: 760;
+  font-size: clamp(2.35rem, 6vw, 4.25rem);
+  font-weight: 900;
   line-height: 1;
 }
 
@@ -320,6 +338,19 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.5rem;
+}
+
+.detailGrid > div:first-child::before {
+  display: block;
+  min-height: 12rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  background:
+    linear-gradient(135deg, color-mix(in oklab, var(--primary) 42%, transparent), transparent 52%),
+    linear-gradient(135deg, #1b211c, #080b09);
+  box-shadow: var(--shadow-md);
+  content: "";
 }
 
 .infoList {
@@ -362,13 +393,14 @@
   border-radius: var(--radius-lg);
   background: var(--surface);
   padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
 }
 
 .featureTitle {
   margin: 0;
   color: var(--text-primary);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 850;
 }
 
 .featureCopy {
@@ -400,6 +432,28 @@
 }
 
 @media (max-width: 640px) {
+  .hero {
+    padding-top: 0.75rem;
+  }
+
+  .heroImage {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 13rem;
+    margin-top: 1.5rem;
+  }
+
+  .heroOverlay {
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  }
+
+  .heroInner {
+    min-height: auto;
+    padding-block: 2rem;
+  }
+
   .heroStats {
     grid-template-columns: 1fr;
   }

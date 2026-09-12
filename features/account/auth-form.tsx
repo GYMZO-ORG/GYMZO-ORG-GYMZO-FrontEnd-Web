@@ -12,10 +12,25 @@ export function AuthForm({ mode }: { mode: "sign-in" | "register" }) {
 
   return (
     <div className={styles.authPanel}>
+      <div className={styles.authLockup}>
+        <span className={styles.authMark} aria-hidden="true" />
+        <span className={styles.authBrand}>GYMZO</span>
+      </div>
       <form className={styles.authForm}>
         <Alert variant="warning" title="Frontend-only">
           Authentication is not connected yet. This screen prepares the UX and form structure.
         </Alert>
+        <div className={styles.socialRow}>
+          <Button disabled variant="secondary">
+            Continue with Google
+          </Button>
+          <Button disabled variant="secondary">
+            Continue with Apple
+          </Button>
+        </div>
+        <div className={styles.authDivider}>
+          <span>or</span>
+        </div>
         {isRegister ? (
           <Input label="Full name" name="name" placeholder="Alex Morgan" autoComplete="name" />
         ) : null}

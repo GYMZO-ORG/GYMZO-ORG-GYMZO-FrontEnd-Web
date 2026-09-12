@@ -1,3 +1,141 @@
+.memberHero {
+  display: grid;
+  gap: 1.25rem;
+  align-items: end;
+  margin-top: 1rem;
+  border: 1px solid color-mix(in oklab, var(--primary-hover) 18%, var(--border));
+  border-radius: var(--radius-panel);
+  background:
+    radial-gradient(circle at 84% 18%, rgb(255 255 255 / 36%), transparent 10rem),
+    linear-gradient(135deg, var(--primary), var(--primary-soft));
+  padding: 1.25rem;
+  box-shadow: var(--shadow-md);
+}
+
+.contextPills {
+  display: inline-flex;
+  gap: 0.25rem;
+  border: 1px solid color-mix(in oklab, var(--primary-hover) 22%, var(--border));
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--surface) 58%, transparent);
+  padding: 0.25rem;
+}
+
+.contextPills span {
+  border-radius: 999px;
+  color: var(--text-secondary);
+  padding: 0.4375rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.contextPills .contextPillActive {
+  background: var(--text-primary);
+  color: var(--surface);
+}
+
+.memberHeroKicker {
+  margin: 1.5rem 0 0.5rem;
+  color: color-mix(in oklab, var(--text-primary) 76%, var(--text-secondary));
+  font-size: 0.8125rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.memberHeroTitle {
+  max-width: 40rem;
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.memberHeroCopy {
+  max-width: 38rem;
+  margin: 0.875rem 0 0;
+  color: color-mix(in oklab, var(--text-primary) 74%, var(--text-secondary));
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.progressCard {
+  display: grid;
+  gap: 0.75rem;
+  border: 1px solid color-mix(in oklab, var(--text-primary) 12%, transparent);
+  border-radius: var(--radius-xl);
+  background: color-mix(in oklab, var(--surface) 78%, transparent);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.progressCard span {
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 800;
+}
+
+.progressCard strong {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+
+.progressTrack {
+  overflow: hidden;
+  height: 0.625rem;
+  border-radius: 999px;
+  background: var(--surface-tertiary);
+}
+
+.progressTrack span {
+  display: block;
+  width: 75%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--text-primary);
+}
+
+.actionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.actionCard {
+  display: grid;
+  min-height: 7rem;
+  align-content: space-between;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  color: var(--text-primary);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color var(--duration-base),
+    transform var(--duration-base),
+    box-shadow var(--duration-base);
+}
+
+.actionCard:hover {
+  border-color: color-mix(in oklab, var(--primary) 50%, var(--border));
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.actionCard svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--primary-hover);
+}
+
+.actionCard span {
+  font-size: 1rem;
+  font-weight: 850;
+}
+
 .memberGrid {
   display: grid;
   gap: 1rem;
@@ -8,10 +146,10 @@
 .checkInPanel,
 .timelineCard {
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   background: var(--surface);
   padding: 1.25rem;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 .profileHeader {
@@ -25,7 +163,7 @@
   margin: 0;
   color: var(--text-primary);
   font-size: 1.5rem;
-  font-weight: 760;
+  font-weight: 850;
   line-height: 1.2;
 }
 
@@ -82,7 +220,7 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-md);
-  background: color-mix(in oklab, var(--primary) 16%, var(--surface-secondary));
+  background: var(--primary-soft);
   color: var(--text-primary);
 }
 
@@ -90,7 +228,7 @@
   margin: 0;
   color: var(--text-primary);
   font-size: 2rem;
-  font-weight: 780;
+  font-weight: 900;
   line-height: 1;
 }
 
@@ -128,7 +266,7 @@
   gap: 1rem;
   min-height: 18rem;
   border: 1px dashed var(--border-strong);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   background:
     linear-gradient(135deg, color-mix(in oklab, var(--primary) 12%, transparent), transparent),
     var(--surface-secondary);
@@ -139,14 +277,15 @@
   margin: 0;
   color: var(--text-primary);
   font-size: 1.25rem;
-  font-weight: 740;
+  font-weight: 850;
 }
 
 .stepCard {
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   background: var(--surface);
   padding: 1rem;
+  box-shadow: var(--shadow-sm);
 }
 
 .stepTitle,
@@ -154,7 +293,7 @@
   margin: 0.75rem 0 0;
   color: var(--text-primary);
   font-size: 1rem;
-  font-weight: 720;
+  font-weight: 850;
 }
 
 .timelineTitle {
@@ -166,6 +305,15 @@
 }
 
 @media (min-width: 768px) {
+  .memberHero {
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.38fr);
+    padding: 1.5rem;
+  }
+
+  .actionGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .memberGrid {
     grid-template-columns: minmax(18rem, 0.65fr) minmax(0, 1.35fr);
   }
