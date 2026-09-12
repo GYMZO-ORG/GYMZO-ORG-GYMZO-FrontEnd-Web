@@ -1,0 +1,179 @@
+.showcase {
+  display: grid;
+  gap: 3rem;
+}
+
+.swatchGrid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.swatchContent {
+  padding: 1rem;
+}
+
+.swatch {
+  height: 4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.swatchName {
+  margin: 0.75rem 0 0;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 650;
+}
+
+.swatchValue {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.typographyContent,
+.actionsContent,
+.compositionContent {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+
+.typeDisplay,
+.typeH1,
+.typeH2,
+.typeH3,
+.typeBodyLarge,
+.typeBody,
+.typeBodySmall,
+.typeLabel {
+  margin: 0;
+}
+
+.typeDisplay {
+  color: var(--text-primary);
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  font-weight: 650;
+  line-height: 1.08;
+}
+
+.typeH1 {
+  color: var(--text-primary);
+  font-size: 2.25rem;
+  font-weight: 650;
+  line-height: 1.12;
+}
+
+.typeH2 {
+  color: var(--text-primary);
+  font-size: 1.875rem;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.typeH3 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.typeBodyLarge {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.typeBody {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.typeBodySmall {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.typeLabel {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.actionsContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.twoColumnGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.formContent,
+.statusContent {
+  display: grid;
+  gap: 1rem;
+}
+
+.choicePanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+}
+
+.choiceLabel {
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.badgeRow,
+.inlineRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.loadingText,
+.mutedText {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.skeletonShort {
+  width: 75%;
+  height: 1rem;
+}
+
+.skeletonBlock {
+  width: 100%;
+  height: 5rem;
+}
+
+@media (min-width: 640px) {
+  .swatchGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .swatchGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .twoColumnGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
